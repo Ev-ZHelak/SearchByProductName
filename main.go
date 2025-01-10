@@ -54,7 +54,7 @@ func downloadFile(url string) (ResponseData, error) {
 	var data ResponseData
 	err = json.NewDecoder(resp.Body).Decode(&data)
 	if err != nil {
-		return ResponseData{}, fmt.Errorf("ошибка декодирования JSON:", err)
+		return ResponseData{}, fmt.Errorf("ошибка декодирования JSON: %v", err)
 	}
 
 	return data, nil
